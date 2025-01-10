@@ -8,10 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
 <body>
     <!-- Header -->
-    <div class="header-title">NAME</div>
-    <div class="divider"></div>
+    <div class="header-title">Home</div>
+    <!-- <div class="divider"></div> -->
 
     <!-- Navbar -->
     <div class="navbar">
@@ -21,24 +25,41 @@
         <a href="photography.html"><img src="icons/photography.png" alt="Photography"> Photography</a>
         <a href="videos.html"><img src="icons/videos.png" alt="Videos"> Videos</a>
         <a href="links.html"><img src="icons/links.png" alt="Links"> Useful Links</a>
+        <a href="contact.html"><img src="icons/contacts.png" alt="Contact"> Contact</a>
     </div>
 
-    <div class="divider"></div>
+    <!-- <div class="divider"></div> -->
 
     <!-- Main Content -->
     <div class="content">
         <!-- Placeholder for Image -->
-        <div class="image-placeholder">Image Here</div>
+        <div class="image-placeholder">
+            <img src="CMS.png" alt="CMS Schematic" class="image-placeholder">
+        </div>
+
+        <!-- Clock and Weather Section -->
+        <div class="info-section">
+            <!-- Clock -->
+            <div id="clock"></div>
+            <!-- City Name Section (below the clock) -->
+            <div id="city-country"></div>
+            <!-- Weather -->
+            <div id="weather">
+                <p><span id="temperature"></span>°C, <span id="description"></span></p>
+            </div>
+        </div>
+
         <!-- Placeholder for Text -->
         <div class="text-placeholder">
-            <h2>Welcome to the Home Page</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non mi sit amet mi tempus lacinia a ac odio.</p>
+            <h2>Welcome to my World</h2>
+            <p>Being a physicist by nature, I am always trying to find the Answer instead of knowing the Question ... I am joking. I never know the Answer as well. So, my quest is always to find the questions especially in Particle Physics and then in order to find the answer, first I think, then I write code, and then ofcourse, I start to find the bugs in it. Finally, I fix the bugs and then life gets happy again, even without the Answer I was trying to find .. huh </p>
+            <p>Being alive in this infinite loop, I came to Strasbourg as a postdoc in CMS, and I have been doing the same thing since 2023. So, keeping "Life is beautiful" in mind, I welcome you to this loop of my world.  </p>
         </div>
     </div>
 
-    <div class="divider"></div>
-
     <!-- Footer -->
     <div class="footer">© 2025 Your Website Name</div>
+    <!-- Java Script for weather and clock -->
+    <script src="clock_script.js" defer></script>
 </body>
 </html>

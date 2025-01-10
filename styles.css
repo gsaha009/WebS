@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #c1c1c1;
     color: #333;
     line-height: 1.6;
 }
@@ -11,16 +11,26 @@ body {
 /* Header Section */
 .header-title {
     font-size: 56px;
+    font-weight: 400; /* Default weight for Yesteryear */
+    text-align: center;
+    margin: 20px 0;
+    color: rgba(51, 51, 51, 1.0); /* Dark gray with 70% opacity */
+    letter-spacing: 3px;
+    font-family: 'Meddon', cursive; /* Apply Yesteryear font */
+}
+/*
+.header-title {
+    font-size: 56px;
     font-weight: 800;
     text-align: center;
     margin: 20px 0;
-    color: #4a4e69;
+    color: rgba(51, 51, 51, 0.9);
     letter-spacing: 2px;
 }
-
+*/
 /* Divider */
 .divider {
-    border-bottom: 2px solid #9a8c98;
+    border-bottom: 2px solid #515151;
     margin: 20px auto;
     width: 80%;
 }
@@ -31,7 +41,7 @@ body {
     justify-content: center;
     gap: 30px;
     padding: 15px 0;
-    background-color: #4a4e69;
+    background-color: #272727;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -59,18 +69,22 @@ body {
 
 /* Content Section */
 .content {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    gap: 20px;
+    display: grid;
+    grid-template-rows: 1fr auto; /* Two rows: one for image and one for clock/weather */
+    grid-template-columns: 300px 1fr; /* Two columns: left for image/clock/weather, right for text */
+    gap: 120px;
+    row-gap: 20px; /* Specifically adds vertical spacing between rows */
     max-width: 1200px;
     margin: auto;
+    padding: 40px;
+    align-items: start;
 }
 
-.content .image-placeholder {
-    flex: 1;
-    border: 3px dashed #9a8c98;
-    background-color: #ddd;
+/* Image on the Top Left */
+.image-placeholder {
+    grid-row: 1 / 2; /* Place it in the first row */
+    grid-column: 1 / 2; /* Place it in the first column */
+    background-color: #c1c1c1;
     height: 300px;
     border-radius: 10px;
     display: flex;
@@ -79,19 +93,59 @@ body {
     font-size: 18px;
     color: #6c757d;
     font-weight: bold;
+    margin-left: 45px; /* Adjust this value to move the image to the right */
 }
 
-.content .text-placeholder {
-    flex: 2;
+/* Clock and Weather on the Bottom Left */
+.info-section {
+    grid-row: 2 / 3; /* Place it in the second row */
+    grid-column: 1 / 2; /* Place it in the first column */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c1c1c1;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 2px; /* Reduce vertical gap */
+    transform: translateX(40px); /* Move it slightly to the right */
+}
+
+.info-section #clock {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-section #city-country {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 2px; /* Reduced space between clock and city */
+}
+
+.info-section #weather {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+/* Text on the Full Right */
+.text-placeholder {
+    grid-row: 1 / 3; /* Span both rows */
+    grid-column: 2 / 3; /* Place it in the second column */
+    background-color: #cacaca;
     padding: 20px;
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Square Peg', cursive;
+    font-size: 21px;
 }
 
 /* Footer */
 .footer {
-    background-color: #22223b;
+    background-color: #272727;
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -99,4 +153,90 @@ body {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #9a8c98;
+}
+
+.about-placeholder {
+    display: flex;
+    flex-direction: column;  /* Stack paragraphs vertically */
+    background-color: #d5d4d4;
+    padding: 2% 2%; /* Adjust padding dynamically */
+    margin: 5% auto;
+    border-radius: 1rem; /* Use rem for scaling */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Square Peg', cursive;
+    font-size: 1.5rem;
+    align-items: center;  /* Center items vertically */
+    justify-content: center;  /* Center items horizontally */
+    gap: 0.2rem;
+    width: 90%; /* Dynamic width */
+    max-width: 90vw; /* Prevent overflow beyond the viewport */
+    min-width: 300px; /* Maintain readability on small screens */
+    text-align: center; /* Center align the text */
+    box-sizing: border-box; /* Include padding and borders in dimensions */
+}
+
+
+.contact-placeholder {
+    display: flex;
+    flex-direction: column;  /* Stack paragraphs vertically */
+    background-color: #d5d4d4;
+    padding: 2% 2%; /* Adjust padding dynamically */
+    margin: 5% auto;
+    border-radius: 1rem; /* Use rem for scaling */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Square Peg', cursive;
+    font-size: 1.5rem;
+    align-items: center;  /* Center items vertically */
+    justify-content: center;  /* Center items horizontally */
+    gap: 0.2rem;
+    width: 80%; /* Dynamic width */
+    max-width: 90vw; /* Prevent overflow beyond the viewport */
+    min-width: 300px; /* Maintain readability on small screens */
+    text-align: center; /* Center align the text */
+    box-sizing: border-box; /* Include padding and borders in dimensions */
+}
+
+.contact-placeholder > * {
+    flex-shrink: 0; /* Prevent shrinking of children */
+    max-width: 100%; /* Prevent overflowing content */
+}
+
+.contact-placeholder p {
+    /*font-weight: bold; */
+    font-size: 24px;     /* Larger font size for the paragraphs */
+    margin: 2px 0;       /* Reduced vertical space between the paragraphs */
+}
+
+.email-icon {
+    width: 32px; /* Adjust size as needed */
+    height: 32px;
+    display: block; /* Center the icon vertically */
+}
+
+.github-icon {
+    width: 35px; /* Adjust size as needed */
+    height: 35px;
+    display: block; /* Center the icon vertically */
+}
+
+.social-icons {
+    display: flex; /* Makes children align in a row */
+    justify-content: center; /* Centers icons horizontally */
+    gap: 15px; /* Space between icons */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+.social-icons a {
+    display: inline-block; /* Ensures links behave properly */
+}
+
+.icon {
+    width: 32px; /* Adjust size as needed */
+    height: 32px;
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.icon:hover {
+    transform: scale(3.0); /* Slightly enlarge icon on hover */
 }
