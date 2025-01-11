@@ -10,7 +10,7 @@ body {
 
 /* Header Section */
 .header-title {
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 400; /* Default weight for Yesteryear */
     text-align: center;
     margin: 20px 0;
@@ -238,5 +238,122 @@ body {
 }
 
 .icon:hover {
+    content: attr(alt);
     transform: scale(3.0); /* Slightly enlarge icon on hover */
+}
+
+.link-icon {
+    width: 22px; /* Adjust size as needed */
+    height: 18px;
+}
+.link-icon a {
+    display: inline-block; /* Ensures links behave properly */
+}
+
+.indico-icon {
+    width: 24px; /* Adjust size as needed */
+    height: 14px;
+}
+.indico-icon a {
+    display: inline-block; /* Ensures links behave properly */
+}
+
+.dp-placeholder {
+    background-color: #d5d4d4;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #6c757d;
+    font-weight: bold;
+    margin: 50px 0;
+}
+
+
+.links-placeholder {
+    display: flex;
+    flex-direction: column;  /* Stack paragraphs vertically */
+    background-color: #d5d4d4;
+    padding: 2% 2%; /* Adjust padding dynamically */
+    margin: 5% auto;
+    border-radius: 1rem; /* Use rem for scaling */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Square Peg', cursive;
+    font-size: 1.5rem;
+    align-items: flex-start;  /* Center items vertically */
+    justify-content: center;  /* Center items horizontally */
+    gap: 0.2rem;
+    width: 80%; /* Dynamic width */
+    max-width: 90vw; /* Prevent overflow beyond the viewport */
+    min-width: 300px; /* Maintain readability on small screens */
+    text-align: center; /* Center align the text */
+    box-sizing: border-box; /* Include padding and borders in dimensions */
+}
+
+.links-placeholder > * {
+    flex-shrink: 0; /* Prevent shrinking of children */
+    max-width: 100%; /* Prevent overflowing content */
+}
+
+.links-placeholder p {
+    /*font-weight: bold; */
+    font-size: 24px;     /* Larger font size for the paragraphs */
+    margin: 2px 0;       /* Reduced vertical space between the paragraphs */
+}
+
+.preview-link {
+    position: relative;
+    text-decoration: none;
+    color: blue;
+}
+
+/* Style for the preview box */
+.preview-box {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#pdf-preview {
+    width: 100%;
+    height: 100%;
+}
+
+/* Optional styling for the link */
+.preview-link {
+    cursor: pointer;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px;
+    gap: 25px;
+}
+.gallery a {
+    text-decoration: none;
+}
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.gallery img:hover {
+    transform: scale(1.1);
 }
