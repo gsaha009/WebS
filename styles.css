@@ -123,7 +123,9 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 40px;
-    align-items: start;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 /* Image on the Top Left */
