@@ -355,5 +355,36 @@ body {
     transition: transform 0.2s;
 }
 .gallery img:hover {
-    transform: scale(1.1);
+    transform: scale(2.0);
+}
+
+
+.gallery2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px;
+    gap: 25px;
+}
+.gallery2 a {
+    text-decoration: none;
+}
+.gallery2 img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    /*transition: transform 0.2s;*/
+    transition: transform 0.2s ease, z-index 0s, opacity 0s;
+    cursor: pointer;
+    position: relative;
+}
+.gallery2 img:hover {
+    transform: scale(); /* Make image 2.5 times bigger */
+    position: relative; /* Remove from the document flow and put it on top */
+    top: 50%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%) scale(2.5); /* Center and scale */
+    z-index: 1000; /* Bring it to the front */
 }
