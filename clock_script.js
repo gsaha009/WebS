@@ -39,3 +39,14 @@ fetchWeather(); // Fetch weather data when page loads
     
 // Optional: Fetch weather every 15 minutes (900000 ms)
 setInterval(fetchWeather, 900000); // Update weather data every 15 minutes
+
+// date
+// Get the current date
+const currentDate = new Date();
+
+// Format the date (optional, you can customize this)
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+// Display the date in the footer
+document.getElementById('current-date').textContent = formattedDate;

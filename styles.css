@@ -6,6 +6,8 @@ body {
     background-color: #c1c1c1;
     color: #333;
     line-height: 1.6;
+    overflow-x: auto; /* Enable horizontal scrolling when necessary */
+    overflow-y: auto; /* Enable horizontal scrolling when necessary */
 }
 
 /* Header Section */
@@ -33,6 +35,29 @@ body {
     border-bottom: 2px solid #515151;
     margin: 20px auto;
     width: 80%;
+}
+/* Shadowed line */
+.divider.shadow {
+    height: 3px;
+    background-color: #000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+/* Rounded line */
+.divider.rounded {
+    height: 5px;
+    background-color: #000;
+    border-radius: 5px;
+}
+/* Gradient line */
+.divider.gradient {
+    background: linear-gradient(to right, #32631f, #c4e1c4); /* Gradient colors */
+    height: 4px; /* Make it slightly thicker */
+    border: none;
+}
+.divider.gradient2 {
+    background: linear-gradient(to right, #0e0e0e, #bcbdbc); /* Gradient colors */
+    height: 4px; /* Make it slightly thicker */
+    border: none;
 }
 
 /* Navbar */
@@ -363,8 +388,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 40px;
-    gap: 25px;
+    margin: 40px 140px;
+    gap: 20px;
 }
 .gallery2 a {
     text-decoration: none;
@@ -376,7 +401,7 @@ body {
     border: 1px solid white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     /*transition: transform 0.2s;*/
-    transition: transform 0.2s ease, z-index 0s, opacity 0s;
+    transition: transform 0.3s ease, z-index 0s, opacity 0s;
     cursor: pointer;
     position: relative;
 }
@@ -387,4 +412,9 @@ body {
     left: 50%; /* Center it horizontally */
     transform: translate(-50%, -50%) scale(2.5); /* Center and scale */
     z-index: 1000; /* Bring it to the front */
+}
+/* Optional: Ensure parent containers allow overflow */
+.container {
+    overflow-x: auto;
+    overflow: visible; /* Ensure content can overflow this container */
 }
