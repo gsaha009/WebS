@@ -3,11 +3,31 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c1c1c1;
-    color: #333;
+    /*background-color: #c1c1c1;*/
+    /*color: #333;*/
     line-height: 1.6;
     overflow-x: auto; /* Enable horizontal scrolling when necessary */
     overflow-y: auto; /* Enable horizontal scrolling when necessary */
+    /* Combine five images */
+    background: 
+        url('./photos/cortada_higgs-ww.jpg') no-repeat left,
+        url('./photos/cortada_higgs-gg.jpg') no-repeat 25% center,
+        url('./photos/cortada_higgs-bb.jpg') no-repeat 50% center,
+        url('./photos/cortada_higgs-tt.jpg') no-repeat 75% center,
+        url('./photos/cortada_higgs-zz.jpg') no-repeat 100% center;
+
+    /* Individual sizes for each image */
+    background-size: 
+        20% 100%, /* Image 1 */
+        20% 100%, /* Image 2 */
+        20% 100%, /* Image 3 */
+        20% 100%, /* Image 4 */
+        20% 100%; /* Image 5 */
+    /* Add transparency with a semi-transparent overlay */
+    background-repeat: repeat-y; /* Repeat vertically */
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: overlay;
+    height: 100vh; /* Full viewport height */
 }
 
 /* Header Section */
@@ -16,7 +36,7 @@ body {
     font-weight: 400; /* Default weight for Yesteryear */
     text-align: center;
     margin: 20px 0;
-    color: rgba(51, 51, 51, 1.0); /* Dark gray with 70% opacity */
+    color: rgb(0, 0, 0); /* Dark gray with 70% opacity */
     letter-spacing: 3px;
     font-family: 'Meddon', cursive; /* Apply Yesteryear font */
 }
@@ -66,14 +86,15 @@ body {
     justify-content: center;
     gap: 30px;
     padding: 15px 0;
-    background-color: #272727;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0); /*#272727;*/
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
 }
 
 .navbar a {
     text-decoration: none;
     font-size: 16px;
-    color: #fff;
+    font-weight:  500;
+    color: #030303;
     display: flex;
     align-items: center;
     padding: 5px 10px;
@@ -82,8 +103,8 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #9a8c98;
-    transform: scale(1.05);
+    background-color: #fdff87;
+    transform: scale(1.5);
 }
 
 .navbar a img {
@@ -97,7 +118,7 @@ body {
     display: grid;
     grid-template-rows: 1fr auto; /* Two rows: one for image and one for clock/weather */
     grid-template-columns: 300px 1fr; /* Two columns: left for image/clock/weather, right for text */
-    gap: 120px;
+    gap: 220px;
     row-gap: 20px; /* Specifically adds vertical spacing between rows */
     max-width: 1200px;
     margin: auto;
@@ -118,7 +139,8 @@ body {
     font-size: 18px;
     color: #6c757d;
     font-weight: bold;
-    margin-left: 45px; /* Adjust this value to move the image to the right */
+    margin-left: 70px; /* Adjust this value to move the image to the right */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Clock and Weather on the Bottom Left */
@@ -129,12 +151,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #c1c1c1;
+    background-color: #eaeaea;
     border-radius: 20px;
-    padding: 10px 30px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
     gap: 2px; /* Reduce vertical gap */
-    transform: translateX(40px); /* Move it slightly to the right */
+    transform: translateX(70px); /* Move it slightly to the right */
 }
 
 .info-section #clock {
@@ -160,10 +182,10 @@ body {
 .text-placeholder {
     grid-row: 1 / 3; /* Span both rows */
     grid-column: 2 / 3; /* Place it in the second column */
-    background-color: #cacaca;
+    background-color: rgb(234, 234, 234);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
     font-family: 'Square Peg', cursive;
     font-size: 21px;
 }
@@ -204,11 +226,11 @@ body {
 .contact-placeholder {
     display: flex;
     flex-direction: column;  /* Stack paragraphs vertically */
-    background-color: #d5d4d4;
+    background-color: rgba(234, 234, 234, 0.7);
     padding: 2% 2%; /* Adjust padding dynamically */
     margin: 5% auto;
     border-radius: 1rem; /* Use rem for scaling */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     font-family: 'Square Peg', cursive;
     font-size: 1.5rem;
     align-items: center;  /* Center items vertically */
@@ -284,7 +306,7 @@ body {
 }
 
 .dp-placeholder {
-    background-color: #d5d4d4;
+    background-color: rgba(0, 0, 0, 0.0)
     height: 300px;
     border-radius: 10px;
     display: flex;
@@ -294,17 +316,18 @@ body {
     color: #6c757d;
     font-weight: bold;
     margin: 50px 0;
+    margin-right: 50px;
 }
 
 
 .links-placeholder {
     display: flex;
     flex-direction: column;  /* Stack paragraphs vertically */
-    background-color: #d5d4d4;
+    background-color: rgba(234, 234, 234, 0.7);
     padding: 2% 2%; /* Adjust padding dynamically */
     margin: 5% auto;
     border-radius: 1rem; /* Use rem for scaling */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     font-family: 'Square Peg', cursive;
     font-size: 1.5rem;
     align-items: flex-start;  /* Center items vertically */
