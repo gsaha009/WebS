@@ -135,7 +135,7 @@ body {
     grid-row: 1 / 2; /* Place it in the first row */
     grid-column: 1 / 2; /* Place it in the first column */
     background-color: #c1c1c1;
-    height: 300px;
+    height: 250px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -418,7 +418,7 @@ body {
     transition: transform 0.2s;
 }
 .gallery img:hover {
-    transform: scale(2.0);
+    transform: scale(1.5);
 }
 
 
@@ -444,12 +444,12 @@ body {
     position: relative;
 }
 .gallery2 img:hover {
-    transform: scale(); /* Make image 2.5 times bigger */
-    position: relative; /* Remove from the document flow and put it on top */
-    top: 50%; /* Center it vertically */
-    left: 50%; /* Center it horizontally */
-    transform: translate(-50%, -50%) scale(2.5); /* Center and scale */
-    z-index: 1000; /* Bring it to the front */
+    transform: scale();
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2.5);
+    z-index: 1000;
 }
 /* Optional: Ensure parent containers allow overflow */
 .container {
